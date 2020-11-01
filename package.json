@@ -1,0 +1,42 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "nodemon .",
+    "test:unit": "NODE_ENV=test mocha --recursive",
+    "test:unit:watch": "NODE_ENV=test mocha -w --recursive",
+    "test:cover": "nyc -r text-summary npm run test:unit && nyc -r html report",
+    "test": "nyc --check-coverage -r text-summary npm run test:unit",
+    "posttest": "yarn lint"
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "helmet": "^3.10.0",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback-connector-mysql": "^6.0.0",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^4.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "mocha": "^8.2.0",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "api"
+}
